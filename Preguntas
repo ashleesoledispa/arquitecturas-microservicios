@@ -1,12 +1,21 @@
-##1️⃣ ¿Qué fue más rápido de implementar y desplegar?
+## 📌 Comparación entre Arquitectura Docker y Serverless
 
-La arquitectura basada en Docker fue más rápida de implementar y probar localmente, ya que permite ejecutar el servicio de forma inmediata sin depender de configuraciones adicionales del proveedor cloud. El proceso de construcción y ejecución del contenedor fue directo y fácil de verificar en un entorno local.
+### **1️⃣ ¿Qué fue más rápido de implementar y desplegar?**
 
-##2️⃣ ¿Qué complejidad encontraste en cada tecnología?##
+La arquitectura basada en **Docker** fue más rápida de implementar y probar localmente, ya que permite ejecutar el servicio de forma inmediata sin depender de configuraciones adicionales de un proveedor cloud. El proceso de construcción de la imagen y ejecución del contenedor fue directo y fácil de verificar en un entorno local.
 
-En Docker, la principal complejidad fue la creación del Dockerfile y la correcta configuración de puertos y dependencias, aunque una vez configurado, el despliegue es predecible y estable.
-En Serverless, la complejidad estuvo relacionada con la configuración del framework y la simulación del entorno cloud en local, especialmente en el manejo de eventos HTTP, ya que el comportamiento local difiere del entorno real de AWS Lambda.
+---
 
-##3️⃣ ¿Qué arquitectura recomendarías para una aplicación con picos de alto volumen de tráfico?##
+### **2️⃣ ¿Qué complejidad encontraste en cada tecnología?**
 
-Para una aplicación con picos altos e impredecibles de tráfico, se recomienda una arquitectura Serverless, ya que permite el escalado automático bajo demanda, optimiza el uso de recursos y reduce costos al pagar únicamente por el tiempo de ejecución. Docker es más adecuado para cargas constantes o cuando se requiere mayor control sobre el entorno de ejecución.
+En **Docker**, la principal complejidad estuvo en la creación del `Dockerfile` y en la correcta configuración de puertos y dependencias. Sin embargo, una vez configurado, el despliegue resulta predecible y estable.
+
+En **Serverless**, la complejidad se centró en la configuración del framework y en la simulación del entorno cloud en local, especialmente en el manejo de eventos HTTP, ya que el comportamiento local puede diferir del entorno real de **AWS Lambda**.
+
+---
+
+### **3️⃣ ¿Qué arquitectura recomendarías para una aplicación con picos de alto volumen de tráfico?**
+
+Para una aplicación con picos altos e impredecibles de tráfico, se recomienda una arquitectura **Serverless**, ya que permite el **escalado automático bajo demanda**, optimiza el uso de recursos y reduce costos al pagar únicamente por el tiempo de ejecución.  
+Por otro lado, **Docker** es más adecuado para cargas constantes o cuando se requiere mayor control sobre el entorno de ejecución.
+
