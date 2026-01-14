@@ -1,0 +1,96 @@
+# 🧩 Arquitecturas de Microservicios: Docker vs Serverless
+
+## 📌 Objetivo
+Construir, desplegar y comparar un servicio REST simple implementado en dos arquitecturas diferentes:
+- **Microservicio con Docker**
+- **Función Serverless (AWS Lambda con Serverless Framework)**
+
+El servicio expone un endpoint `/hello` que recibe un nombre y devuelve un mensaje personalizado.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+- Python 3
+- FastAPI
+- Docker
+- AWS Lambda (simulado en local)
+- Serverless Framework v3
+- Git y GitHub
+
+---
+
+## 📂 Estructura del repositorio
+
+arquitecturas-microservicios/
+│
+├── hello-docker-api/
+│ ├── main.py
+│ ├── requirements.txt
+│ ├── Dockerfile
+│
+├── hello-serverless-new/
+│ ├── handler.py
+│ ├── serverless.yml
+│ ├── .gitignore
+│
+└── README.md
+
+yaml
+Copiar código
+
+---
+
+# 🐳 Parte 1: Microservicio con Docker
+
+## 🔹 Descripción
+Se implementó una API REST simple usando **FastAPI**, la cual responde al endpoint:
+
+GET /hello?name=Ana
+
+css
+Copiar código
+
+Respuesta esperada:
+```json
+{
+  "message": "Hola Ana desde Docker"
+}
+▶️ Cómo ejecutar el servicio con Docker
+1️⃣ Entrar a la carpeta del proyecto
+bash
+Copiar código
+cd hello-docker-api
+2️⃣ Construir la imagen Docker
+bash
+Copiar código
+docker build -t hello-docker-api .
+3️⃣ Ejecutar el contenedor
+bash
+Copiar código
+docker run -p 8000:8000 hello-docker-api
+4️⃣ Probar el endpoint
+Abrir en el navegador o usar Postman:
+
+bash
+Copiar código
+http://localhost:8000/hello?name=Ana
+☁️ Parte 2: Función Serverless (AWS Lambda)
+🔹 Descripción
+Se implementó la misma funcionalidad /hello como una función Serverless, simulando el comportamiento de AWS Lambda + API Gateway en entorno local.
+
+Respuesta esperada:
+
+json
+Copiar código
+{
+  "message": "Hola Ana desde Serverless"
+}
+▶️ Cómo ejecutar la función Serverless en local
+1️⃣ Entrar a la carpeta del proyecto
+bash
+Copiar código
+cd hello-serverless-new
+2️⃣ Ejecutar la función localmente
+bash
+Copiar código
+npx serverless@3 invoke local --function hello --data "{\"queryStringParameters\": {\"name\": \"Ana\"}}"
