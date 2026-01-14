@@ -1,4 +1,4 @@
-##1️⃣ ¿Qué fue más rápido de implementar y desplegar?##
+##1️⃣ ¿Qué fue más rápido de implementar y desplegar?
 
 La arquitectura basada en Docker fue más rápida de implementar y probar localmente, ya que permite ejecutar el servicio de forma inmediata sin depender de configuraciones adicionales del proveedor cloud. El proceso de construcción y ejecución del contenedor fue directo y fácil de verificar en un entorno local.
 
